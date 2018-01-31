@@ -1,0 +1,8 @@
+name: Etherpad
+description: |
+  ZAWiW Etherpad
+version: 1.0.0
+category: WebStack
+maintainer: Sascha Winkelhofer
+license: The MIT License
+

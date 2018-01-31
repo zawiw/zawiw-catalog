@@ -1,0 +1,62 @@
+.catalog:
+  name: Etherpad
+  version: 1.0.0
+  description: Etherpad lite with possibility for OAuth authentification
+  minimum_rancher_version: v0.63.0
+  questions:
+    - variable: ETHERPAD_TITLE
+      label: Title for Etherpad
+      description: Enter the title for your Etherpad instance
+      required: true
+      type: string
+    - variable: ETHERPAD_ADMIN_PASSWORD
+      label: Etherpad Admin Password
+      description: Enter the password for the Etherpad admin (for access to pad.example.com/admin)
+      required: true
+      type: string
+    - variable: STORAGE_VOLUME
+      label: Volume Path
+      description: |
+        Path on the host where the backups should be stored.
+      required: true
+      type: string
+    - variable: ENABLE_OAUTH
+      label: Use OAuth authentification?
+      default: false
+      type: boolean
+    - variable: OAUTH_PROVIDER
+      label: Which OAuth provider to use?
+      description: Select one of the following OAuth providers
+      required: false
+      type: enum
+      options:
+        - gitlab
+        - github      
+    - variable: OAUTH_PROVIDER_URI
+      label: URI of the OAuth provider
+      description: Enter the URI of the OAuth provider (e.g. https://git.example.com)
+      required: false
+      type: string
+    - variable: OAUTH_CLIENT
+      label: OAuth client key
+      description: Enter the OAuth client key
+      required: false
+      type: string
+    - variable: OAUTH_SECRET
+      label: OAuth client secret
+      description: Enter the OAuth client secret
+      required: false
+      type: password
+    - variable: ETHERPAD_DOMAIN
+      label: Domain of your Etherpad instance
+      description: If OAuth is enabled enter the domain of the etherpad instance (for Cookie handling)
+      required: false
+      type: string
+    - variable: ETHERPAD_PROTOCOL
+      label: Protocol for your Etherpad instance
+      description: If OAuth is enabled select the protocol for the Etherpad instance
+      required: false
+      type: enum
+      options:
+        - http
+        - https

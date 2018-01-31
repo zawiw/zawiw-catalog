@@ -19,7 +19,7 @@
       type: password
       required: true
     - variable: STORAGE_VOLUME
-      label: Volume Name (Optional)
+      label: Volume Path
       description: |
         Path on the host where the backups should be stored.
       required: true
