@@ -8,12 +8,10 @@
       label: Link to the mailserver
       description: Enter the name of a mailserver-container (form: Stack/Service)
       required: true
-      default: "Postfix/mailserver"
       type: string
     - variable: LDAP_LINK
       label: Link to the LDAP Server
       description: Enter the name of a OpenLDAP-container (form: Stack/Service)
-      default: "OpenLDAP/openldap"
       required: true
       type: string
     - variable: STORAGE_VOLUME
