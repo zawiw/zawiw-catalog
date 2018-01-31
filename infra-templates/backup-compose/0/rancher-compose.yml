@@ -1,0 +1,26 @@
+.catalog:
+  name: Rancher-Compose Backup
+  version: v0.1
+  description: Backup all rancher-compose files and docker-compose files
+  minimum_rancher_version: v0.63.0
+  questions:
+    - variable: RANCHER_API_ENVIRONMENT_URL
+      label: URL for the rancher evironment for which backup should be enabled
+      description: "Enter the URL which should look like e.g. https://<rancher-domain>/v1/projects/1a5/environments/"
+      type: string
+      required: true
+    - variable: RANCHER_API_USER
+      label: Rancher API access key
+      description: Enter generated Rancher API access key
+      type: password
+    - variable: RANCHER_API_SECRET
+      label: Rancher API secret
+      description: Enter generated Rancher API secret
+      type: password
+      required: true
+    - variable: STORAGE_VOLUME
+      label: Volume Name (Optional)
+      description: |
+        Path on the host where the backups should be stored.
+      required: true
+      type: string

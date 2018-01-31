@@ -1,0 +1,5 @@
+name: Backup Rancher-compose files
+description: |
+  This service provides backup for all rancher-compose files and docker-compose files to restore the current status after an unexpected crash of Rancher
+version:  v0.1
+category: Backup

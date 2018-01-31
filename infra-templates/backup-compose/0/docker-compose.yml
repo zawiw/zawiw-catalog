@@ -1,0 +1,14 @@
+version: '2'
+services:
+  backup:
+    image: registry.zawiw.de:5000/swinkelhofer/backupcompose
+    environment:
+      RANCHER_API_ENVIRONMENT_URL: ${RANCHER_API_ENVIRONMENT_URL}
+      RANCHER_API_SECRET: ${RANCHER_API_SECRET}
+      RANCHER_API_USER: ${RANCHER_API_USER}
+    stdin_open: true
+    volumes:
+    - ${STORAGE_VOLUME}:/mnt
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
