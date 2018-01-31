@@ -13,7 +13,7 @@
       label: Etherpad Admin Password
       description: Enter the password for the Etherpad admin (for access to pad.example.com/admin)
       required: true
-      type: string
+      type: password
     - variable: STORAGE_VOLUME
       label: Volume Path
       description: |
