@@ -8,5 +8,5 @@
       label: Storage Volume
       description: |
         Persistent data can be saved on the host or in a named volume. So type either a path on the host (e.g. /export/maustraining) or the name of the named volume
-      required: true
+      required: false
       type: string

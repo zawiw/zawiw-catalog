@@ -1,0 +1,5 @@
+name: Let's Encrypt for ZAWiW
+description: |
+  One Stack to secure all ZAWiW-domains
+version:  v0.1
+category: Security
