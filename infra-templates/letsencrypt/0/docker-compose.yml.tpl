@@ -36,7 +36,7 @@ services:
     volumes:
       - /var/lib/rancher:/var/lib/rancher
       {{- if .Values.VOLUME_NAME}}
-      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt/production/certs/
       {{- end }}
     labels:
       io.rancher.container.agent.role: environment
@@ -76,7 +76,7 @@ services:
     volumes:
       - /var/lib/rancher:/var/lib/rancher
       {{- if .Values.VOLUME_NAME}}
-      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt/production/certs/
       {{- end }}
     labels:
       io.rancher.container.agent.role: environment
@@ -116,7 +116,7 @@ services:
     volumes:
       - /var/lib/rancher:/var/lib/rancher
       {{- if .Values.VOLUME_NAME}}
-      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt/production/certs/
       {{- end }}
     labels:
       io.rancher.container.agent.role: environment
@@ -156,7 +156,7 @@ services:
     volumes:
       - /var/lib/rancher:/var/lib/rancher
       {{- if .Values.VOLUME_NAME}}
-      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt/production/certs/
       {{- end }}
     labels:
       io.rancher.container.agent.role: environment
@@ -196,7 +196,7 @@ services:
     volumes:
       - /var/lib/rancher:/var/lib/rancher
       {{- if .Values.VOLUME_NAME}}
-      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt/production/certs/
       {{- end }}
     labels:
       io.rancher.container.agent.role: environment
@@ -236,7 +236,7 @@ services:
     volumes:
       - /var/lib/rancher:/var/lib/rancher
       {{- if .Values.VOLUME_NAME}}
-      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt/production/certs/
       {{- end }}
     labels:
       io.rancher.container.agent.role: environment
@@ -276,7 +276,7 @@ services:
     volumes:
       - /var/lib/rancher:/var/lib/rancher
       {{- if .Values.VOLUME_NAME}}
-      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt/production/certs/
       {{- end }}
     labels:
       io.rancher.container.agent.role: environment
@@ -316,7 +316,7 @@ services:
     volumes:
       - /var/lib/rancher:/var/lib/rancher
       {{- if .Values.VOLUME_NAME}}
-      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt/production/certs/
       {{- end }}
     labels:
       io.rancher.container.agent.role: environment
@@ -356,7 +356,7 @@ services:
     volumes:
       - /var/lib/rancher:/var/lib/rancher
       {{- if .Values.VOLUME_NAME}}
-      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt/production/certs/
       {{- end }}
     labels:
       io.rancher.container.agent.role: environment
