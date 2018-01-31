@@ -4,12 +4,6 @@
   description: Let's Encrypt for all ZAWiW-domains
   minimum_rancher_version: v0.63.0
   questions:
-    - variable: STORAGE_VOLUME
-      label: Storage Volume
-      description: |
-        Persistent data can be saved on the host or in a named volume. So type either a path on the host (e.g. /export/maustraining) or the name of the named volume
-      required: false
-      type: string
     - variable: CLOUDFLARE_EMAIL
       label: CloudFlare Email Address
       description: Enter the email address associated with your CloudFlare account.
@@ -20,3 +14,9 @@
       description: Enter the Global API Key for your CloudFlare account.
       type: password
       required: true
+    - variable: VOLUME_NAME
+      label: Volume Name (Optional)
+      description: |
+        Persistent data can be saved on the host or in a named volume. So type either a path on the host (e.g. /export/maustraining) or the name of the named volume
+      required: false
+      type: string

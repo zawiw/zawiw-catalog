@@ -34,8 +34,10 @@ services:
       RENEWAL_TIME: '23'
       VULTR_API_KEY: ''
     volumes:
-    - /var/lib/rancher:/var/lib/rancher
-    - ${STORAGE_VOLUME}:/etc/letsencrypt/production/certs/
+      - /var/lib/rancher:/var/lib/rancher
+      {{- if .Values.VOLUME_NAME}}
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      {{- end }}
     labels:
       io.rancher.container.agent.role: environment
       io.rancher.container.create_agent: 'true'
@@ -72,8 +74,10 @@ services:
       RENEWAL_TIME: '23'
       VULTR_API_KEY: ''
     volumes:
-    - /var/lib/rancher:/var/lib/rancher
-    - ${STORAGE_VOLUME}:/etc/letsencrypt/production/certs/
+      - /var/lib/rancher:/var/lib/rancher
+      {{- if .Values.VOLUME_NAME}}
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      {{- end }}
     labels:
       io.rancher.container.agent.role: environment
       io.rancher.container.create_agent: 'true'
@@ -110,8 +114,10 @@ services:
       RENEWAL_TIME: '23'
       VULTR_API_KEY: ''
     volumes:
-    - /var/lib/rancher:/var/lib/rancher
-    - ${STORAGE_VOLUME}:/etc/letsencrypt/production/certs/
+      - /var/lib/rancher:/var/lib/rancher
+      {{- if .Values.VOLUME_NAME}}
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      {{- end }}
     labels:
       io.rancher.container.agent.role: environment
       io.rancher.container.create_agent: 'true'
@@ -148,8 +154,10 @@ services:
       RENEWAL_TIME: '23'
       VULTR_API_KEY: ''
     volumes:
-    - /var/lib/rancher:/var/lib/rancher
-    - ${STORAGE_VOLUME}:/etc/letsencrypt/production/certs/
+      - /var/lib/rancher:/var/lib/rancher
+      {{- if .Values.VOLUME_NAME}}
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      {{- end }}
     labels:
       io.rancher.container.agent.role: environment
       io.rancher.container.create_agent: 'true'
@@ -186,8 +194,10 @@ services:
       RENEWAL_TIME: '23'
       VULTR_API_KEY: ''
     volumes:
-    - /var/lib/rancher:/var/lib/rancher
-    - ${STORAGE_VOLUME}:/etc/letsencrypt/production/certs/
+      - /var/lib/rancher:/var/lib/rancher
+      {{- if .Values.VOLUME_NAME}}
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      {{- end }}
     labels:
       io.rancher.container.agent.role: environment
       io.rancher.container.create_agent: 'true'
@@ -224,8 +234,10 @@ services:
       RENEWAL_TIME: '23'
       VULTR_API_KEY: ''
     volumes:
-    - /var/lib/rancher:/var/lib/rancher
-    - ${STORAGE_VOLUME}:/etc/letsencrypt/production/certs/
+      - /var/lib/rancher:/var/lib/rancher
+      {{- if .Values.VOLUME_NAME}}
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      {{- end }}
     labels:
       io.rancher.container.agent.role: environment
       io.rancher.contai327179d6794ddad21b12cb60ac57eabb351b7ner.create_agent: 'true'
@@ -262,8 +274,10 @@ services:
       RENEWAL_TIME: '23'
       VULTR_API_KEY: ''
     volumes:
-    - /var/lib/rancher:/var/lib/rancher
-    - ${STORAGE_VOLUME}:/etc/letsencrypt/production/certs/
+      - /var/lib/rancher:/var/lib/rancher
+      {{- if .Values.VOLUME_NAME}}
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      {{- end }}
     labels:
       io.rancher.container.agent.role: environment
       io.rancher.container.create_agent: 'true'
@@ -300,8 +314,10 @@ services:
       RENEWAL_TIME: '23'
       VULTR_API_KEY: ''
     volumes:
-    - /var/lib/rancher:/var/lib/rancher
-    - ${STORAGE_VOLUME}:/etc/letsencrypt/production/certs/
+      - /var/lib/rancher:/var/lib/rancher
+      {{- if .Values.VOLUME_NAME}}
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      {{- end }}
     labels:
       io.rancher.container.agent.role: environment
       io.rancher.container.create_agent: 'true'
@@ -338,8 +354,10 @@ services:
       RENEWAL_TIME: '23'
       VULTR_API_KEY: ''
     volumes:
-    - /var/lib/rancher:/var/lib/rancher
-    - ${STORAGE_VOLUME}:/etc/letsencrypt/production/certs/
+      - /var/lib/rancher:/var/lib/rancher
+      {{- if .Values.VOLUME_NAME}}
+      - {{.Values.VOLUME_NAME}}:/etc/letsencrypt
+      {{- end }}
     labels:
       io.rancher.container.agent.role: environment
       io.rancher.container.create_agent: 'true'
