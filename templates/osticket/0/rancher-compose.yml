@@ -1,5 +1,4 @@
-version: '2'
-catalog:
+.catalog:
   name: OSTicket
   version: 1.0.0
   description: Ticket System with LDAP-integration
