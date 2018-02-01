@@ -14,7 +14,7 @@ services:
       io.rancher.container.pull_image: always
   {{- if eq .Values.USE_CONFIG_SIDEKICK "true" }}
   wiki_config:
-    image: ${CONFIG_SIDEKICK_IMAGE}
+    image: "${CONFIG_SIDEKICK_IMAGE}"
     stdin_open: true
     tty: true
     labels:
