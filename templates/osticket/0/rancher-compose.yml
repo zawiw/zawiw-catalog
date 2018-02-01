@@ -1,6 +1,7 @@
-.catalog:
+version: '2'
+catalog:
   name: OSTicket
-  version: 1.0.0
+  version: 1.0.1
   description: Ticket System with LDAP-integration
   minimum_rancher_version: v0.63.0
   questions:
@@ -22,3 +23,18 @@
         Path on the host where the backups should be stored.
       required: true
       type: string
+
+
+services:
+  gui:
+    health_check:
+      response_timeout: 2000
+      healthy_threshold: 2
+      port: 80
+      unhealthy_threshold: 3
+      initializing_timeout: 60000
+      interval: 2000
+      strategy: recreate
+      request_line: GET "/" "HTTP/1.0"
+      reinitializing_timeout: 60000
+
