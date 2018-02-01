@@ -1,0 +1,24 @@
+version: '2'
+services:
+  wiki:
+    image: registry.zawiw.de:5000/wiki
+    stdin_open: true
+    extra_hosts:
+  {{- if eq .Values.USE_CONFIG_SIDEKICK "true" }}
+    volumes_from:
+    - wiki_config
+  {{- end }}
+    volumes:
+    - ${STORAGE_VOLUME}:/opt/moin/wiki/data
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  {{- if eq .Values.USE_CONFIG_SIDEKICK "true" }}
+  wiki_config:
+    image: ${CONFIG_SIDEKICK_IMAGE}
+    stdin_open: true
+    extra_hosts:
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  {{- end }}
