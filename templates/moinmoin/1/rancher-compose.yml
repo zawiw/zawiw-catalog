@@ -1,7 +1,7 @@
 version: '2'
 catalog:
   name: MoinMoin Wiki
-  version: 1.0.0
+  version: 1.0.1
   description: MoinMoin Standalone Wiki
   minimum_rancher_version: v0.63.0
   questions:
