@@ -1,4 +1,5 @@
-.catalog:
+version: '2'
+catalog:
   name: Maustraining
   version: 1.0.0
   description: ZAWiW Maustraining
@@ -12,8 +13,6 @@
       type: string
 services:
   maustraining:
-    scale: 1
-    start_on_create: true
     health_check:
       response_timeout: 2000
       healthy_threshold: 2
