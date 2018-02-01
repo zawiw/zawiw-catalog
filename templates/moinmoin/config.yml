@@ -1,6 +1,6 @@
 name: Maustraining
 description: |
-  MoinMoin Wiki with LDAP integration
+  MoinMoin Wiki with configuration sidekick
 version: 1.0.0
 category: WebStack
 maintainer: Sascha Winkelhofer
