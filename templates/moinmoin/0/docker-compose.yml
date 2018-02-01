@@ -1,7 +1,7 @@
 version: '2'
 services:
   wiki:
-    image: registry.zawiw.de:5000/wiki
+    image: "registry.zawiw.de:5000/wiki"
     stdin_open: true
   {{- if eq .Values.USE_CONFIG_SIDEKICK "true" }}
     volumes_from:
