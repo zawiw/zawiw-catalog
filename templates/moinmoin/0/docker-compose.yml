@@ -12,6 +12,9 @@ services:
     tty: true
     labels:
       io.rancher.container.pull_image: always
+      {{- if eq .Values.USE_CONFIG_SIDEKICK "true" }}
+      io.rancher.sidekicks: moinmoin-config
+      {{- end }}
   {{- if eq .Values.USE_CONFIG_SIDEKICK "true" }}
   moinmoin-config:
     image: "${CONFIG_SIDEKICK_IMAGE}"
