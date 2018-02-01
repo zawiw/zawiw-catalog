@@ -31,19 +31,19 @@ catalog:
     - variable: SMB_PASS
       label: Samba user password
       description: |
-        "Enter the Samba users' password"
+        Enter the Samba users' password
       required: true
       type: password
     - variable: MAIL_RCPT
       label: Mail recipient
       description: |
-        "Enter an email address that receives success and error mails"
+        Enter an email address that receives success and error mails
       required: true
       type: string
     - variable: MAIL_SENDER
-      label: Mail recipient
+      label: Mail sender
       description: |
-        "Enter an email address with which all messages should be sent"
+        Enter an email address with which all messages should be sent
       required: true
       type: string
     - variable: MAIL_SERVER
