@@ -5,7 +5,7 @@ services:
     stdin_open: true
   {{- if eq .Values.USE_CONFIG_SIDEKICK "true" }}
     volumes_from:
-    - wiki-config
+    - "wiki-config"
   {{- end }}
     volumes:
     - ${STORAGE_VOLUME}:/opt/moin/wiki/data
