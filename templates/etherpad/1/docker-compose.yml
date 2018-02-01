@@ -1,0 +1,48 @@
+version: '2'
+services:
+  {{- if eq .Values.ENABLE_OAUTH "true" }}
+  oauth-reverse-proxy:
+    image: registry.zawiw.de:5000/swinkelhofer/oauth_reverse_proxy
+    environment:
+      OAUTH_CLIENT: ${OAUTH_CLIENT}
+      OAUTH_SECRET: ${OAUTH_SECRET}
+      DOMAIN: ${ETHERPAD_DOMAIN}
+      PROTOCOL: ${ETHERPAD_PROTOCOL}
+      OAUTH_PROVIDER: ${OAUTH_PROVIDER}
+      OAUTH_PROVIDER_URI: ${OAUTH_PROVIDER_URI}
+      UPSTREAM_HOSTNAME: etherpad
+      UPSTREAM_PORT: '9001'
+      REPLACE_CALLBACK: etherpad:inject_js
+    stdin_open: true
+    tty: true
+    links:
+    - etherpad:etherpad
+    labels:
+      io.rancher.container.pull_image: always
+  {{- end }}
+  etherpad:
+    image: tvelocity/etherpad-lite
+    environment:
+      ETHERPAD_ADMIN_PASSWORD: ${ETHERPAD_ADMIN_PASSWORD}
+      ETHERPAD_DB_HOST: db
+      ETHERPAD_DB_PASSWORD: password
+      ETHERPAD_TITLE: ${ETHERPAD_TITLE}
+    stdin_open: true
+    volumes:
+    - ${STORAGE_VOLUME}/node_modules:/opt/etherpad-lite/node_modules
+    tty: true
+    links:
+    - db:db
+    labels:
+      io.rancher.container.pull_image: always
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    stdin_open: true
+    volumes:
+    - ${STORAGE_VOLUME}/mysql:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+
