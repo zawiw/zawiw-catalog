@@ -1,0 +1,22 @@
+version: '2'
+services:
+  attic:
+    privileged: true
+    cap_add:
+    - DAC_READ_SEARCH
+    - SYS_ADMIN
+    image: registry.zawiw.de:5000/swinkelhofer/attic
+    stdin_open: true
+    volumes:
+    - ${STORAGE_VOLUME}:/export
+    environment:
+    - SMB_URI=${SMB_URI}
+    - SMB_USER=${SMB_USER}
+    - SMB_PASS=${SMB_PASS}
+    - BACKUP_DESTINATION=${BACKUP_DESTINATION}
+    - MAIL_RCPT=${MAIL_RCPT}
+    - MAIL_SENDER=${MAIL_SENDER}
+    - MAIL_SERVER=${MAIL_SERVER}
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always

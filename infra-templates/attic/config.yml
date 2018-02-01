@@ -1,0 +1,5 @@
+name: Attic Backup in Rancher
+description: |
+  This service provides Backup of a volume to a Samba share.
+version:  v0.1
+category: Backup

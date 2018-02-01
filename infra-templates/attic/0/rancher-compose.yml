@@ -1,0 +1,54 @@
+catalog:
+  name: Volume backup
+  version: v0.1
+  description: Backup container volume to a Samba share
+  minimum_rancher_version: v0.63.0
+  questions:
+    - variable: STORAGE_VOLUME
+      label: Volume Path
+      description: |
+        Path on the host where the backups should be stored.
+      required: true
+      type: string
+    - variable: SMB_URI
+      label: IP or FQDN of SMB server
+      description: |
+        Enter the IP or FQDN of the SMB where the backup shall be stored
+      required: true
+      type: string
+    - variable: BACKUP_DESTINATION
+      label: Export path of the SMB share
+      description: |
+        Enter the export path of the SMB share where the backup shall be stored
+      required: true
+      type: string
+    - variable: SMB_USER
+      label: Samba username
+      description: |
+        Enter the Samba user that has write access to the Samba share
+      required: true
+      type: string
+    - variable: SMB_PASS
+      label: Samba user password
+      description: |
+        "Enter the Samba users' password"
+      required: true
+      type: password
+    - variable: MAIL_RCPT
+      label: Mail recipient
+      description: |
+        "Enter an email address that receives success and error mails"
+      required: true
+      type: string
+    - variable: MAIL_SENDER
+      label: Mail recipient
+      description: |
+        "Enter an email address with which all messages should be sent"
+      required: true
+      type: string
+    - variable: MAIL_SERVER
+      label: Mailserver for mail delivery
+      description: |
+        Enter the IP or FQDN of the mailserver that should deliver status mails
+      required: true
+      type: string
