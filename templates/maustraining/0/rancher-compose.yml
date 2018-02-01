@@ -10,3 +10,18 @@
         Persistent data can be saved on the host or in a named volume. So type either a path on the host (e.g. /export/maustraining) or the name of the named volume
       required: false
       type: string
+services:
+  maustraining:
+    scale: 1
+    start_on_create: true
+    health_check:
+      response_timeout: 2000
+      healthy_threshold: 2
+      port: 5000
+      unhealthy_threshold: 3
+      initializing_timeout: 60000
+      interval: 2000
+      strategy: recreate
+      request_line: GET "/" "HTTP/1.0"
+      reinitializing_timeout: 60000
+
