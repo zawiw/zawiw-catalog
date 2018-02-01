@@ -6,17 +6,16 @@
   questions:
     - variable: STORAGE_VOLUME 
       label: Data volume
-      description: |
-        "Persistent data can be saved on the host or in a named volume. So type either a path on the host (e.g. /export/wikidata) or the name of the named volume"
+      description: "Persistent data can be saved on the host or in a named volume. So type either a path on the host (e.g. /export/wikidata) or the name of the named volume"
       required: false
       type: string
-   - variable: USE_CONFIG_SIDEKICK
-     label: "Use sidekick container for configuration?"
-     description: "If sidekick container for configuration is used, it has to export the volume /config containing the wikiconfig.py. The wikiconfig allows login via LDAP and other configuration options"
-     type: boolean
-     default: false
-   - variable: CONFIG_SIDEKICK_IMAGE
-     label: Config sidekick image
-     description: Docker image of sidekick for wiki configuration
-     required: false
-     type: string
+    - variable: USE_CONFIG_SIDEKICK
+      label: "Use sidekick container for configuration?"
+      description: "If sidekick container for configuration is used, it has to export the volume /config containing the wikiconfig.py. The wikiconfig allows login via LDAP and other configuration options"
+      type: boolean
+      default: false
+    - variable: CONFIG_SIDEKICK_IMAGE
+      label: Config sidekick image
+      description: Docker image of sidekick for wiki configuration
+      required: false
+      type: string
