@@ -1,3 +1,4 @@
+version: '2'
 catalog:
   name: Volume backup
   version: v0.1
