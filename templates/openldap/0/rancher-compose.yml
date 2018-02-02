@@ -5,12 +5,31 @@ catalog:
   description: OpenLDAP Server
   minimum_rancher_version: v0.63.0
   questions:
+    - variable: LDAP_BASE
+      label: LDAP Base DN
+      description: |
+        Enter the nase DN of the LDAP root
+      required: true
+      type: string
+    - variable: LDAP_ROOT_USER
+      label: LDAP root user
+      description: |
+        Enter the name of the LDAP root user
+      required: true
+      type: string
+    - variable: LDAP_ROOT_PW
+      label: LDAP root user password
+      description: |
+        Enter the password of the LDAP root user
+      required: true
+      type: password
     - variable: STORAGE_VOLUME 
       label: Storage Volume
       description: |
         Persistent data can be saved on the host or in a named volume. So type either a path on the host (e.g. /export/openldap) or the name of the named volume
       required: false
       type: string
+  questions:
 services:
   openldap:
     scale: 1

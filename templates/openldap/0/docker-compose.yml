@@ -5,5 +5,8 @@ services:
     stdin_open: true
     volumes:
     - ${STORAGE_VOLUME}/ldap:/var/lib/openldap/openldap-data
-    - ${STORAGE_VOLUME}/conf/:/etc/openldap/
+    environment:
+    - LDAP_BASE=${LDAP_BASE}
+    - LDAP_ROOT_USER=${LDAP_ROOT_USER}
+    - LDAP_ROOT_PW=${LDAP_ROOT_PW}
     tty: true
