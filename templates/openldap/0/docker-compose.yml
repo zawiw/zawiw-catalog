@@ -1,7 +1,7 @@
 version: '2'
 services:
   openldap:
-    image: registry.zawiw.de:5000/openldap
+    image: swinkelhofer/openldap
     stdin_open: true
     volumes:
     - ${STORAGE_VOLUME}/ldap:/var/lib/openldap/openldap-data
