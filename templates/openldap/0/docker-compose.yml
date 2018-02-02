@@ -10,3 +10,5 @@ services:
     - LDAP_ROOT_USER=${LDAP_ROOT_USER}
     - LDAP_ROOT_PW=${LDAP_ROOT_PW}
     tty: true
+    labels:
+      io.rancher.container.pull_image: always
