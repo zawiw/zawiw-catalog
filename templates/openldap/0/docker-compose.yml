@@ -1,0 +1,9 @@
+version: '2'
+services:
+  openldap:
+    image: registry.zawiw.de:5000/openldap
+    stdin_open: true
+    volumes:
+    - ${STORAGE_VOLUME}/ldap:/var/lib/openldap/openldap-data
+    - ${STORAGE_VOLUME}/conf/:/etc/openldap/
+    tty: true
