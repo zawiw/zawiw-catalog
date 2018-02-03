@@ -8,37 +8,44 @@ catalog:
     - variable: STORAGE_LOGS_VOLUME 
       label: Logs volume
       description: "Enter path on the host of a volume containing all log files of other containers"
-      required: false
+      required: true
       type: string
     - variable: STORAGE_CONFIG_VOLUME 
       label: Config volume
       description: "Enter path on the host of a Volume containing the configuration for fail2ban"
       required: false
       type: string
+    - variable: OAUTH_PROVIDER
+      label: OAuth Provider
+      description: Select one of the supported OAuth providers
+      required: true
+      type: enum
+      options:
+        - gitlab
     - variable: OAUTH_PROVIDER_URI
       label: URI of the OAuth provider
       description: Enter the URI of the OAuth provider (e.g. https://git.example.com)
-      required: false
+      required: true
       type: string
     - variable: OAUTH_CLIENT
       label: OAuth client key
       description: Enter the OAuth client key
-      required: false
+      required: true
       type: string
     - variable: OAUTH_SECRET
       label: OAuth client secret
       description: Enter the OAuth client secret
-      required: false
+      required: true
       type: password
     - variable: DOMAIN
       label: Domain of your freeIP WebInterface
       description: If OAuth is enabled enter the domain of the etherpad instance (for Cookie handling)
-      required: false
+      required: true
       type: string
     - variable: PROTOCOL
       label: Protocol for your freeIP WebInterface
       description: If OAuth is enabled select the protocol for the Etherpad instance
-      required: false
+      required: true
       type: enum
       options:
         - http
