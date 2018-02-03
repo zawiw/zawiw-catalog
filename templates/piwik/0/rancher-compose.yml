@@ -1,0 +1,34 @@
+version: '2'
+catalog:
+  name: Piwik
+  version: 1.0.0
+  description: Pwiki Website Analytics
+  minimum_rancher_version: v0.63.0
+  questions:
+    - variable: STORAGE_VOLUME
+      label: Volume Path
+      description: |
+        Path on the host Piwik config and DB data will be stored
+      required: true
+      type: string
+
+services:
+  reverse-proxy:
+    scale: 1
+    start_on_create: true
+  mysql:
+    scale: 1
+    start_on_create: true
+    health_check:
+      healthy_threshold: 2
+      response_timeout: 2000
+      port: 3306
+      unhealthy_threshold: 3
+      initializing_timeout: 60000
+      interval: 2000
+      strategy: recreate
+      reinitializing_timeout: 60000
+  piwik-fpm:
+    scale: 1
+    start_on_create: true
+

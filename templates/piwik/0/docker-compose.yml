@@ -1,0 +1,31 @@
+version: '2'
+services:
+  reverse-proxy:
+    image: abiosoft/caddy
+    stdin_open: true
+    volumes:
+    - ${STORAGE_VOLUME}/piwik-reverse-proxy/Caddyfile:/etc/Caddyfile
+    tty: true
+    volumes_from:
+    - piwik-fpm
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.sidekicks: piwik-fpm
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+    stdin_open: true
+    volumes:
+    - ${STORAGE_VOLUME}/mysql:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  piwik-fpm:
+    image: piwik:3.2.0-fpm
+    stdin_open: true
+    volumes:
+    - ${STORAGE_VOLUME}/piwik-reverse-proxy/config.ini.php:/var/www/html/config/config.ini.php
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always

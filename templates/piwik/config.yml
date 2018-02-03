@@ -1,0 +1,8 @@
+name: Piwik
+description: |
+  Piwik Website Analytics
+version: 1.0.0
+category: Analytics
+maintainer: Sascha Winkelhofer
+license: The MIT License
+

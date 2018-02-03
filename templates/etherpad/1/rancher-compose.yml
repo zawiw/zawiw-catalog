@@ -18,7 +18,7 @@ catalog:
     - variable: STORAGE_VOLUME
       label: Volume Path
       description: |
-        Path on the host where the backups should be stored.
+        Path on the host where data will be stored
       required: true
       type: string
     - variable: ENABLE_OAUTH
