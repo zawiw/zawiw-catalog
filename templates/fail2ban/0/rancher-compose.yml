@@ -11,7 +11,7 @@ catalog:
       required: false
       type: string
     - variable: STORAGE_CONFIG_VOLUME 
-      label: Logs volume
+      label: Config volume
       description: "Enter path on the host of a Volume containing the configuration for fail2ban"
       required: false
       type: string
