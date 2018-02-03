@@ -1,0 +1,36 @@
+version: '2'
+services:
+  fail2ban:
+    privileged: true
+    cap_add:
+    - NET_ADMIN
+    image: ianblenke/fail2ban
+    stdin_open: true
+    network_mode: host
+    volumes:
+    - ${STORAGE_LOGS_VOLUME}:/var/log
+    - ${STORAGE_CONFIG_VOLUME}/filter.d:/etc/fail2ban/filter.d
+    - ${STORAGE_CONFIG_VOLUME}/jail.conf:/etc/fail2ban/jail.conf
+    - ${STORAGE_CONFIG_VOLUME}/jail.local:/etc/fail2ban/jail.local
+    - ${STORAGE_CONFIG_VOLUME}/startup.sh:/startup.sh
+    - ${STORAGE_CONFIG_VOLUME}/action.d/wordpress-soft-action.conf:/etc/fail2ban/action.d/wordpress-soft-action.conf
+    tty: true
+    command:
+    - /startup.sh
+    labels:
+      io.rancher.container.pull_image: always
+  releaseIP:
+    privileged: true
+    image: registry.zawiw.de:5000/swinkelhofer/releaseip
+    environment:
+      OAUTH_CLIENT: ${OAUTH_CLIENT}
+      OAUTH_SECRET: ${OAUTH_SECRET}
+      DOMAIN: ${DOMAIN}
+      PROTOCOL: ${PROTOCOL}
+      OAUTH_PROVIDER: ${OAUTH_PROVIDER}
+      OAUTH_PROVIDER_URI: ${OAUTH_PROVIDER_URI}
+    stdin_open: true
+    network_mode: host
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always

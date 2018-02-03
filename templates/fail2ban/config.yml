@@ -1,0 +1,8 @@
+name: Fail2Ban
+description: |
+  Fail2Ban IP filter with IP-release WebFrontend
+version: 1.0.0
+category: Security
+maintainer: Sascha Winkelhofer
+license: The MIT License
+
