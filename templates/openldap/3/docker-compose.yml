@@ -1,0 +1,42 @@
+version: '2'
+services:
+  albridge:
+    image: zawiw/ad2ldap
+    environment:
+      IPS: ${ALLOWED_IPS}
+      RANCHER_ACCESS_KEY: ${RANCHER_ACCESS_KEY}
+      RANCHER_SECRET_KEY: ${RANCHER_SECRET_KEY}
+      RANCHER_URL_API_ENV: ${RANCHER_URL_API_ENV}
+      TOKEN: ${TOKEN}
+      PROXIES: ${PROXIES}
+      RANCHER_STACK: {{ .Stack.Name }}
+    stdin_open: true
+    tty: true
+    volumes:
+    - ${STORAGE_VOLUME}/ldap:/var/lib/openldap/openldap-data
+    labels:
+      io.rancher.sidekicks: albridge-ldap
+      io.rancher.container.pull_image: always
+  albridge-ldap:
+    image: zawiw/openldap
+    environment:
+      LDAP_BASE: ${LDAP_BASE}
+      LDAP_ROOT_USER: ${LDAP_ROOT_USER}
+      LDAP_ROOT_PW: ${LDAP_ROOT_PW}
+    stdin_open: true
+    tty: true
+    volumes_from:
+    - albridge
+    labels:
+      io.rancher.container.pull_image: always
+  phpldapadmin:
+    image: osixia/phpldapadmin:latest
+    environment:
+      PHPLDAPADMIN_HTTPS: 'false'
+      PHPLDAPADMIN_LDAP_HOSTS: albridge-ldap.albridge.{{ .Stack.Name }}.rancher.internal
+      PHPLDAPADMIN_TRUST_PROXY_SSL: 'true'
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+
