@@ -9,7 +9,7 @@ services:
       RANCHER_URL_API_ENV: ${RANCHER_URL_API_ENV}
       TOKEN: ${TOKEN}
       PROXIES: ${PROXIES}
-      RANCHER_STACK: ${stack_name}
+      RANCHER_STACK: $${stack_name}}
     stdin_open: true
     tty: true
     volumes:

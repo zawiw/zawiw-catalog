@@ -1,7 +1,7 @@
 name: OpenLDAP
 description: |
   OpenLDAP Server
-version: 1.1.0
+version: 1.1.1
 category: Authentication
 maintainer: Sascha Winkelhofer
 license: The MIT License
