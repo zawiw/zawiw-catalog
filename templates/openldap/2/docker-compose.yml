@@ -9,7 +9,7 @@ services:
       RANCHER_URL_API_ENV: ${RANCHER_URL_API_ENV}
       TOKEN: ${TOKEN}
       PROXIES: ${PROXIES}
-      RANCHER_STACK: $${stack_name}}
+      RANCHER_STACK: $${stack_name}
     stdin_open: true
     tty: true
     volumes:
@@ -33,7 +33,7 @@ services:
     image: osixia/phpldapadmin:latest
     environment:
       PHPLDAPADMIN_HTTPS: 'false'
-      PHPLDAPADMIN_LDAP_HOSTS: albridge-ldap.albridge.${stack_name}.rancher.internal
+      PHPLDAPADMIN_LDAP_HOSTS: albridge-ldap.albridge.$${stack_name}.rancher.internal
       PHPLDAPADMIN_TRUST_PROXY_SSL: 'true'
     stdin_open: true
     tty: true
