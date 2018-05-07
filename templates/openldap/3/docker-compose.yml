@@ -13,7 +13,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-    - ${STORAGE_VOLUME}/ldap:/var/lib/openldap/openldap-data
+    - ${STORAGE_VOLUME}/ldap:/export
     labels:
       io.rancher.sidekicks: albridge-ldap
       io.rancher.container.pull_image: always
