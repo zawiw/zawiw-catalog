@@ -1,0 +1,86 @@
+version: '2'
+catalog:
+  name: OpenLDAP
+  version: 1.1.0
+  description: OpenLDAP Server
+  minimum_rancher_version: v0.63.0
+  questions:
+    - variable: LDAP_BASE
+      label: LDAP Base DN
+      description: |
+        Enter the nase DN of the LDAP root
+      required: true
+      type: string
+    - variable: LDAP_ROOT_USER
+      label: LDAP root user
+      description: |
+        Enter the name of the LDAP root user
+      required: true
+      type: string
+    - variable: RANCHER_ACCESS_KEY
+      label: Access Key for Rancher API
+      description: |
+        Enter the access key for Rancher API
+      required: true
+      type: string
+    - variable: RANCHER_URL_API_ENV
+      label: URL of Rancher API Environment
+      description: |
+        "Enter the URL for the Rancher API Enironment (sth. like https://rancher_url/v1/projects/1a5/)"
+      required: true
+      type: string
+    - variable: RANCHER_SECRET_KEY
+      label: Secret Key for Rancher API
+      description: |
+        Enter the secret key for Rancher API
+      required: true
+      type: string
+    - variable: ALLOWED_IPS
+      label: Allowed IPs
+      description: |
+        Enter comma-seperated list of IPs/hostnames that can access the AD2LDAP-bridge
+      required: true
+      type: string
+    - variable: TOKEN
+      label: HTTP-Token for access security
+      description: |
+        Enter a random token that must be sent with HTTP-Header \"Token\"
+      required: true
+      type: string
+    - variable: PROXIES
+      label: Proxy-list
+      description: |
+        Enter comma-seperated IP/hostname-list of proxies/loadbalancers between client and AD2LDAP-bridge
+      required: true
+      type: string
+    - variable: LDAP_ROOT_PW
+      label: LDAP root user password
+      description: |
+        Enter the password of the LDAP root user
+      required: true
+      type: password
+    - variable: STORAGE_VOLUME 
+      label: Storage Volume
+      description: |
+        Persistent data can be saved on the host or in a named volume. So type either a path on the host (e.g. /export/openldap) or the name of the named volume
+      required: false
+      type: string
+services:
+  albridge:
+    scale: 1
+    start_on_create: true
+  albridge-ldap:
+    scale: 1
+    start_on_create: true
+    health_check:
+      healthy_threshold: 2
+      response_timeout: 2000
+      port: 389
+      unhealthy_threshold: 3
+      initializing_timeout: 60000
+      interval: 2000
+      strategy: recreate
+      reinitializing_timeout: 60000
+  phpldapadmin:
+    scale: 1
+    start_on_create: true
