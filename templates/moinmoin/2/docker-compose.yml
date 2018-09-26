@@ -1,0 +1,26 @@
+version: '2'
+services:
+  moinmoin:
+    image: "registry.zawiw.de/swinkelhofer/dockerbaseimages/wiki"
+    stdin_open: true
+    {{- if eq .Values.USE_CONFIG_SIDEKICK "true" }}
+    volumes_from:
+    - moinmoin-config
+    {{- end }}
+    volumes:
+    - ${STORAGE_VOLUME}:/opt/moin/wiki/data
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      {{- if eq .Values.USE_CONFIG_SIDEKICK "true" }}
+      io.rancher.sidekicks: moinmoin-config
+      {{- end }}
+  {{- if eq .Values.USE_CONFIG_SIDEKICK "true" }}
+  moinmoin-config:
+    image: "${CONFIG_SIDEKICK_IMAGE}"
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.start_once: 'true'
+  {{- end }}
