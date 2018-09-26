@@ -1,7 +1,7 @@
 version: '2'
 catalog:
   name: OSTicket
-  version: 1.0.1
+  version: 1.0.2
   description: Ticket System with LDAP-integration
   minimum_rancher_version: v0.63.0
   questions:
