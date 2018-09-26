@@ -1,0 +1,11 @@
+version: '2'
+services:
+  maustraining:
+    image: registry.zawiw.de/user/run/maustraining
+    stdin_open: true
+    working_dir: /opt/app
+    volumes:
+    - ${STORAGE_VOLUME}:/opt/app/db
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
