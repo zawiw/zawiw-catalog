@@ -1,0 +1,33 @@
+version: '2'
+services:
+  gui:
+    image: campbellsoftwaresolutions/osticket:1.9
+    environment:
+      CRON_INTERVAL: '1'
+      MYSQL_PASSWORD: secret
+      MYSQL_USER: root
+      MYSQL_HOST: mysql
+    stdin_open: true
+    external_links:
+    - ${MAILSERVER_LINK}:mailserver
+    - ${LDAP_LINK}/openldap:openldap
+    volumes:
+    - ${STORAGE_VOLUME}/startup.sh:/startup.sh
+    tty: true
+    links:
+    - db:mysql
+    command:
+    - /startup.sh
+    labels:
+      io.rancher.container.pull_image: always
+  db:
+    image: zawiw/mysql
+    environment:
+      MYSQL_DATABASE: osticket
+      MYSQL_ROOT_PASSWORD: secret
+    stdin_open: true
+    volumes:
+    - ${SQL_IMPORT_DUMP}:/docker-entrypoint-initdb.d/dump.sql.gz
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always

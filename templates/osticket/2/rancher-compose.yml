@@ -1,0 +1,40 @@
+version: '2'
+catalog:
+  name: OSTicket
+  version: 1.0.1
+  description: Ticket System with LDAP-integration
+  minimum_rancher_version: v0.63.0
+  questions:
+    - variable: MAILSERVER_LINK
+      label: Link to the mailserver
+      description: "Enter the name of a mailserver-container (form: Stack/Service)"
+      required: true
+      default: "Postfix/mailserver"
+      type: string
+    - variable: LDAP_LINK
+      label: Link to the LDAP Server
+      description: "Enter the name of a OpenLDAP-container (form: Stack/Service)"
+      default: "OpenLDAP/openldap"
+      required: true
+      type: string
+    - variable: SQL_IMPORT_DUMP
+      label: Path to an SQL Dump to import at startup
+      description: |
+        Path on the host where data will be stored
+      required: true
+      type: string
+
+
+services:
+  gui:
+    health_check:
+      response_timeout: 2000
+      healthy_threshold: 2
+      port: 80
+      unhealthy_threshold: 3
+      initializing_timeout: 60000
+      interval: 2000
+      strategy: recreate
+      request_line: GET "/" "HTTP/1.0"
+      reinitializing_timeout: 60000
+
