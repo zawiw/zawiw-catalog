@@ -4,6 +4,13 @@
   description: Launch a predefined set of WordPress instances
   minimum_rancher_version: v0.63.0
   questions:
+    - variable: INSTANCE_COUNT
+      label: Number of WordPress instances
+      description: |
+          Enter a number of WordPress instances to be launched
+      required: true
+      type: int
+      default: 2
     - variable: ADMIN_MAIL_ADDRESS
       label: Administrative mail address
       description: Enter a mail address for all administrative tasks
@@ -29,13 +36,7 @@
     - variable: SUBDOMAIN_PREFIX
       label: Subdomain prefix for all WordPress instances
       description: |
-        Enter a subdomain prefix to build an URL like prefixnumber.domain
+        "Enter a subdomain prefix to build an URL like <prefix><number>.<domain>"
       required: true
       type: string
       default: wp
-    - variable: INSTANCE_COUNT
-      label: Number of WordPress instances
-      description: |
-          Enter a number of WordPress instances to be launched
-      required: true
-      type: int
