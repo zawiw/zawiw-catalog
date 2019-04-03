@@ -1,7 +1,7 @@
 version: '2'
 services:
 {{- range $COUNT := $INSTANCE_COUNT }}
-  wordpress:
+  wordpress${COUNT}:
     image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
     environment:
       WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
@@ -20,7 +20,7 @@ services:
       traefik.port: '80'
       traefik.enable: 'true'
       io.rancher.container.pull_image: always
-  mysql:
+  mysql${COUNT}:
     image: mariadb
     environment:
       MYSQL_DATABASE: wordpress
