@@ -32,3 +32,291 @@ services:
     labels:
       io.rancher.container.pull_image: always
 {{- end }}
+{{- if le .Values.INSTANCE_COUNT 2 }}
+  wordpress2:
+    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    environment:
+      WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
+      WORDPRESS_DB_HOST: mysql2:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: secret
+      WORDPRESS_DB_USER: root
+      WORDPRESS_MAILSERVER_HOST: $WORDPRESS_MAILSERVER_HOST
+      WORDPRESS_UPLOAD_SIZE: 64M
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME}/wp2/wp-content:/var/www/html/wp-content
+    tty: true
+    labels:
+      traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}2.${DOMAIN}
+      traefik.port: '80'
+      traefik.enable: 'true'
+      io.rancher.container.pull_image: always
+  mysql2:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: secret
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME/wp2/mysql:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+{{- end }}
+{{- if le .Values.INSTANCE_COUNT 3 }}
+  wordpress3:
+    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    environment:
+      WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
+      WORDPRESS_DB_HOST: mysql3:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: secret
+      WORDPRESS_DB_USER: root
+      WORDPRESS_MAILSERVER_HOST: $WORDPRESS_MAILSERVER_HOST
+      WORDPRESS_UPLOAD_SIZE: 64M
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME}/wp3/wp-content:/var/www/html/wp-content
+    tty: true
+    labels:
+      traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}3.${DOMAIN}
+      traefik.port: '80'
+      traefik.enable: 'true'
+      io.rancher.container.pull_image: always
+  mysql3:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: secret
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME/wp3/mysql:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+{{- end }}
+{{- if le .Values.INSTANCE_COUNT 4 }}
+  wordpress4:
+    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    environment:
+      WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
+      WORDPRESS_DB_HOST: mysql4:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: secret
+      WORDPRESS_DB_USER: root
+      WORDPRESS_MAILSERVER_HOST: $WORDPRESS_MAILSERVER_HOST
+      WORDPRESS_UPLOAD_SIZE: 64M
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME}/wp4/wp-content:/var/www/html/wp-content
+    tty: true
+    labels:
+      traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}4.${DOMAIN}
+      traefik.port: '80'
+      traefik.enable: 'true'
+      io.rancher.container.pull_image: always
+  mysql4:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: secret
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME/wp4/mysql:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+{{- end }}
+{{- if le .Values.INSTANCE_COUNT 5 }}
+  wordpress5:
+    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    environment:
+      WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
+      WORDPRESS_DB_HOST: mysql5:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: secret
+      WORDPRESS_DB_USER: root
+      WORDPRESS_MAILSERVER_HOST: $WORDPRESS_MAILSERVER_HOST
+      WORDPRESS_UPLOAD_SIZE: 64M
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME}/wp5/wp-content:/var/www/html/wp-content
+    tty: true
+    labels:
+      traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}5.${DOMAIN}
+      traefik.port: '80'
+      traefik.enable: 'true'
+      io.rancher.container.pull_image: always
+  mysql5:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: secret
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME/wp5/mysql:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+{{- end }}
+{{- if le .Values.INSTANCE_COUNT 6 }}
+  wordpress6:
+    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    environment:
+      WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
+      WORDPRESS_DB_HOST: mysql6:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: secret
+      WORDPRESS_DB_USER: root
+      WORDPRESS_MAILSERVER_HOST: $WORDPRESS_MAILSERVER_HOST
+      WORDPRESS_UPLOAD_SIZE: 64M
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME}/wp6/wp-content:/var/www/html/wp-content
+    tty: true
+    labels:
+      traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}6.${DOMAIN}
+      traefik.port: '80'
+      traefik.enable: 'true'
+      io.rancher.container.pull_image: always
+  mysql6:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: secret
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME/wp6/mysql:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+{{- end }}
+{{- if le .Values.INSTANCE_COUNT 7 }}
+  wordpress7:
+    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    environment:
+      WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
+      WORDPRESS_DB_HOST: mysql7:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: secret
+      WORDPRESS_DB_USER: root
+      WORDPRESS_MAILSERVER_HOST: $WORDPRESS_MAILSERVER_HOST
+      WORDPRESS_UPLOAD_SIZE: 64M
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME}/wp7/wp-content:/var/www/html/wp-content
+    tty: true
+    labels:
+      traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}7.${DOMAIN}
+      traefik.port: '80'
+      traefik.enable: 'true'
+      io.rancher.container.pull_image: always
+  mysql7:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: secret
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME/wp7/mysql:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+{{- end }}
+{{- if le .Values.INSTANCE_COUNT 8 }}
+  wordpress8:
+    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    environment:
+      WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
+      WORDPRESS_DB_HOST: mysql8:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: secret
+      WORDPRESS_DB_USER: root
+      WORDPRESS_MAILSERVER_HOST: $WORDPRESS_MAILSERVER_HOST
+      WORDPRESS_UPLOAD_SIZE: 64M
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME}/wp8/wp-content:/var/www/html/wp-content
+    tty: true
+    labels:
+      traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}8.${DOMAIN}
+      traefik.port: '80'
+      traefik.enable: 'true'
+      io.rancher.container.pull_image: always
+  mysql8:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: secret
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME/wp8/mysql:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+{{- end }}
+{{- if le .Values.INSTANCE_COUNT 9 }}
+  wordpress9:
+    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    environment:
+      WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
+      WORDPRESS_DB_HOST: mysql9:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: secret
+      WORDPRESS_DB_USER: root
+      WORDPRESS_MAILSERVER_HOST: $WORDPRESS_MAILSERVER_HOST
+      WORDPRESS_UPLOAD_SIZE: 64M
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME}/wp9/wp-content:/var/www/html/wp-content
+    tty: true
+    labels:
+      traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}9.${DOMAIN}
+      traefik.port: '80'
+      traefik.enable: 'true'
+      io.rancher.container.pull_image: always
+  mysql9:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: secret
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME/wp9/mysql:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+{{- end }}
+{{- if le .Values.INSTANCE_COUNT 10 }}
+  wordpress10:
+    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    environment:
+      WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
+      WORDPRESS_DB_HOST: mysql10:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: secret
+      WORDPRESS_DB_USER: root
+      WORDPRESS_MAILSERVER_HOST: $WORDPRESS_MAILSERVER_HOST
+      WORDPRESS_UPLOAD_SIZE: 64M
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME}/wp10/wp-content:/var/www/html/wp-content
+    tty: true
+    labels:
+      traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}10.${DOMAIN}
+      traefik.port: '80'
+      traefik.enable: 'true'
+      io.rancher.container.pull_image: always
+  mysql10:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: secret
+    stdin_open: true
+    volumes:
+    - /${STORAGE_VOLUME/wp10/mysql:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+{{- end }}
