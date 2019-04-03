@@ -1,6 +1,6 @@
 version: '2'
 services:
-{{- range $COUNT := $INSTANCE_COUNT }}
+{{- range $COUNT := .Values.INSTANCE_COUNT }}
   wordpress${COUNT}:
     image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
     environment:
