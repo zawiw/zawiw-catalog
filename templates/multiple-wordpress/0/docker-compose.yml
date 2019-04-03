@@ -2,7 +2,7 @@ version: '2'
 services:
 {{- if ge .Values.INSTANCE_COUNT "01" }}
   wordpress1:
-    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    image: zawiwulm/wordpress:latest
     environment:
       WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
       WORDPRESS_DB_HOST: mysql1:3306
@@ -34,7 +34,7 @@ services:
 {{- end }}
 {{- if ge .Values.INSTANCE_COUNT "02" }}
   wordpress2:
-    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    image: zawiwulm/wordpress:latest
     environment:
       WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
       WORDPRESS_DB_HOST: mysql2:3306
@@ -66,7 +66,7 @@ services:
 {{- end }}
 {{- if ge .Values.INSTANCE_COUNT "03" }}
   wordpress3:
-    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    image: zawiwulm/wordpress:latest
     environment:
       WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
       WORDPRESS_DB_HOST: mysql3:3306
@@ -98,7 +98,7 @@ services:
 {{- end }}
 {{- if ge .Values.INSTANCE_COUNT "04" }}
   wordpress4:
-    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    image: zawiwulm/wordpress:latest
     environment:
       WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
       WORDPRESS_DB_HOST: mysql4:3306
@@ -130,7 +130,7 @@ services:
 {{- end }}
 {{- if ge .Values.INSTANCE_COUNT "05" }}
   wordpress5:
-    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    image: zawiwulm/wordpress:latest
     environment:
       WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
       WORDPRESS_DB_HOST: mysql5:3306
@@ -162,7 +162,7 @@ services:
 {{- end }}
 {{- if ge .Values.INSTANCE_COUNT "06" }}
   wordpress6:
-    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    image: zawiwulm/wordpress:latest
     environment:
       WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
       WORDPRESS_DB_HOST: mysql6:3306
@@ -194,7 +194,7 @@ services:
 {{- end }}
 {{- if ge .Values.INSTANCE_COUNT "07" }}
   wordpress7:
-    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    image: zawiwulm/wordpress:latest
     environment:
       WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
       WORDPRESS_DB_HOST: mysql7:3306
@@ -226,7 +226,7 @@ services:
 {{- end }}
 {{- if ge .Values.INSTANCE_COUNT "08" }}
   wordpress8:
-    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    image: zawiwulm/wordpress:latest
     environment:
       WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
       WORDPRESS_DB_HOST: mysql8:3306
@@ -258,7 +258,7 @@ services:
 {{- end }}
 {{- if ge .Values.INSTANCE_COUNT "09" }}
   wordpress9:
-    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    image: zawiwulm/wordpress:latest
     environment:
       WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
       WORDPRESS_DB_HOST: mysql9:3306
@@ -290,7 +290,7 @@ services:
 {{- end }}
 {{- if ge .Values.INSTANCE_COUNT "10" }}
   wordpress10:
-    image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
+    image: zawiwulm/wordpress:latest
     environment:
       WORDPRESS_ADMIN_MAIL_ADDRESS: $ADMIN_MAIL_ADDRESS
       WORDPRESS_DB_HOST: mysql10:3306
