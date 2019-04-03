@@ -7,9 +7,20 @@
     - variable: INSTANCE_COUNT
       label: Number of WordPress instances
       description: |
-          Enter a number of WordPress instances to be launched
+          Select a number of WordPress instances to be launched
       required: true
-      type: int
+      type: enum
+      options:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
       default: 2
     - variable: ADMIN_MAIL_ADDRESS
       label: Administrative mail address
