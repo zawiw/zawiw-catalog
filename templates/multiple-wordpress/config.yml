@@ -1,0 +1,8 @@
+name: Multiple WordPress instances
+description: |
+  Launch a predefined set of WordPress instances
+version: 0.9.0
+category: WebStack
+maintainer: Sascha Winkelhofer
+license: The MIT License
+

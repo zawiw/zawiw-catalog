@@ -1,0 +1,41 @@
+.catalog:
+  name: Multiple WordPress instances
+  version: 0.9.0
+  description: Launch a predefined set of WordPress instances
+  minimum_rancher_version: v0.63.0
+  questions:
+    - variable: ADMIN_MAIL_ADDRESS
+      label: Administrative mail address
+      description: Enter a mail address for all administrative tasks
+      required: true
+      type: string
+    - variable: WORDPRESS_MAILSERVER_HOST
+      label: Mailserver Host
+      description: Enter the hostname of an accessible mail server
+      required: true
+      type: string
+    - variable: STORAGE_VOLUME
+      label: Volume Path
+      description: |
+        Path on the host where wp-content should be stored.
+      required: true
+      type: string
+    - variable: DOMAIN
+      label: Domain to reach WordPress instances
+      description: |
+        Enter a domain under which WordPress instances are server.
+      required: true
+      type: string
+    - variable: SUBDOMAIN_PREFIX
+      label: Subdomain prefix for all WordPress instances
+      description: |
+        Enter a subdomain prefix to build an URL like <prefix><number>.<domain>
+      required: true
+      type: string
+      default: wp
+    - variable: INSTANCE_COUNT
+      label: Number of WordPress instances
+      description: |
+          Enter a number of WordPress instances to be launched
+      required: true
+      type: int
