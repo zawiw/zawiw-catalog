@@ -1,6 +1,6 @@
 .catalog:
   name: Multiple WordPress instances
-  version: 0.9.0
+  version: 0.9.1
   description: Launch a predefined set of WordPress instances
   minimum_rancher_version: v0.63.0
   questions:
