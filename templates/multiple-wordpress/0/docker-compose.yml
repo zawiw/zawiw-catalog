@@ -1,6 +1,6 @@
 version: '2'
 services:
-{{- if le .Values.INSTANCE_COUNT "1" }}
+{{- if ge .Values.INSTANCE_COUNT "1" }}
   wordpress1:
     image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
     environment:
@@ -32,7 +32,7 @@ services:
     labels:
       io.rancher.container.pull_image: always
 {{- end }}
-{{- if le .Values.INSTANCE_COUNT "2" }}
+{{- if ge .Values.INSTANCE_COUNT "2" }}
   wordpress2:
     image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
     environment:
@@ -64,7 +64,7 @@ services:
     labels:
       io.rancher.container.pull_image: always
 {{- end }}
-{{- if le .Values.INSTANCE_COUNT "3" }}
+{{- if ge .Values.INSTANCE_COUNT "3" }}
   wordpress3:
     image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
     environment:
@@ -96,7 +96,7 @@ services:
     labels:
       io.rancher.container.pull_image: always
 {{- end }}
-{{- if le .Values.INSTANCE_COUNT "4" }}
+{{- if ge .Values.INSTANCE_COUNT "4" }}
   wordpress4:
     image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
     environment:
@@ -128,7 +128,7 @@ services:
     labels:
       io.rancher.container.pull_image: always
 {{- end }}
-{{- if le .Values.INSTANCE_COUNT "5" }}
+{{- if ge .Values.INSTANCE_COUNT "5" }}
   wordpress5:
     image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
     environment:
@@ -160,7 +160,7 @@ services:
     labels:
       io.rancher.container.pull_image: always
 {{- end }}
-{{- if le .Values.INSTANCE_COUNT "6" }}
+{{- if ge .Values.INSTANCE_COUNT "6" }}
   wordpress6:
     image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
     environment:
@@ -192,7 +192,7 @@ services:
     labels:
       io.rancher.container.pull_image: always
 {{- end }}
-{{- if le .Values.INSTANCE_COUNT "7" }}
+{{- if ge .Values.INSTANCE_COUNT "7" }}
   wordpress7:
     image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
     environment:
@@ -224,7 +224,7 @@ services:
     labels:
       io.rancher.container.pull_image: always
 {{- end }}
-{{- if le .Values.INSTANCE_COUNT "8" }}
+{{- if ge .Values.INSTANCE_COUNT "8" }}
   wordpress8:
     image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
     environment:
@@ -256,7 +256,7 @@ services:
     labels:
       io.rancher.container.pull_image: always
 {{- end }}
-{{- if le .Values.INSTANCE_COUNT "9" }}
+{{- if ge .Values.INSTANCE_COUNT "9" }}
   wordpress9:
     image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
     environment:
@@ -288,7 +288,7 @@ services:
     labels:
       io.rancher.container.pull_image: always
 {{- end }}
-{{- if le .Values.INSTANCE_COUNT "10" }}
+{{- if ge .Values.INSTANCE_COUNT "10" }}
   wordpress10:
     image: zawiwulm/wordpress:5.1.1-php7.2-caddy-alpine
     environment:
