@@ -33,9 +33,9 @@
       required: true
       type: string
     - variable: STORAGE_VOLUME
-      label: Volume Path
+      label: Absolute Volume Path
       description: |
-        Path on the host where wp-content should be stored.
+        Absolute path on the host where wp-content should be stored.
       required: true
       type: string
     - variable: DOMAIN

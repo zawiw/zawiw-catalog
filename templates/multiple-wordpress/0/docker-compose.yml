@@ -13,7 +13,7 @@ services:
       WORDPRESS_UPLOAD_SIZE: 64M
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME}/wp1/wp-content:/var/www/html/wp-content
+    - ${STORAGE_VOLUME}/wp1/wp-content:/var/www/html/wp-content
     tty: true
     labels:
       traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}1.${DOMAIN}
@@ -27,7 +27,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME/wp1/mysql:/var/lib/mysql
+    - ${STORAGE_VOLUME/wp1/mysql:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
@@ -45,7 +45,7 @@ services:
       WORDPRESS_UPLOAD_SIZE: 64M
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME}/wp2/wp-content:/var/www/html/wp-content
+    - ${STORAGE_VOLUME}/wp2/wp-content:/var/www/html/wp-content
     tty: true
     labels:
       traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}2.${DOMAIN}
@@ -59,7 +59,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME/wp2/mysql:/var/lib/mysql
+    - ${STORAGE_VOLUME/wp2/mysql:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
@@ -77,7 +77,7 @@ services:
       WORDPRESS_UPLOAD_SIZE: 64M
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME}/wp3/wp-content:/var/www/html/wp-content
+    - ${STORAGE_VOLUME}/wp3/wp-content:/var/www/html/wp-content
     tty: true
     labels:
       traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}3.${DOMAIN}
@@ -91,7 +91,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME/wp3/mysql:/var/lib/mysql
+    - ${STORAGE_VOLUME/wp3/mysql:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
@@ -109,7 +109,7 @@ services:
       WORDPRESS_UPLOAD_SIZE: 64M
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME}/wp4/wp-content:/var/www/html/wp-content
+    - ${STORAGE_VOLUME}/wp4/wp-content:/var/www/html/wp-content
     tty: true
     labels:
       traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}4.${DOMAIN}
@@ -123,7 +123,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME/wp4/mysql:/var/lib/mysql
+    - ${STORAGE_VOLUME/wp4/mysql:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
@@ -141,7 +141,7 @@ services:
       WORDPRESS_UPLOAD_SIZE: 64M
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME}/wp5/wp-content:/var/www/html/wp-content
+    - ${STORAGE_VOLUME}/wp5/wp-content:/var/www/html/wp-content
     tty: true
     labels:
       traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}5.${DOMAIN}
@@ -155,7 +155,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME/wp5/mysql:/var/lib/mysql
+    - ${STORAGE_VOLUME/wp5/mysql:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
@@ -173,7 +173,7 @@ services:
       WORDPRESS_UPLOAD_SIZE: 64M
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME}/wp6/wp-content:/var/www/html/wp-content
+    - ${STORAGE_VOLUME}/wp6/wp-content:/var/www/html/wp-content
     tty: true
     labels:
       traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}6.${DOMAIN}
@@ -187,7 +187,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME/wp6/mysql:/var/lib/mysql
+    - ${STORAGE_VOLUME/wp6/mysql:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
@@ -205,7 +205,7 @@ services:
       WORDPRESS_UPLOAD_SIZE: 64M
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME}/wp7/wp-content:/var/www/html/wp-content
+    - ${STORAGE_VOLUME}/wp7/wp-content:/var/www/html/wp-content
     tty: true
     labels:
       traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}7.${DOMAIN}
@@ -219,7 +219,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME/wp7/mysql:/var/lib/mysql
+    - ${STORAGE_VOLUME/wp7/mysql:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
@@ -237,7 +237,7 @@ services:
       WORDPRESS_UPLOAD_SIZE: 64M
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME}/wp8/wp-content:/var/www/html/wp-content
+    - ${STORAGE_VOLUME}/wp8/wp-content:/var/www/html/wp-content
     tty: true
     labels:
       traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}8.${DOMAIN}
@@ -251,7 +251,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME/wp8/mysql:/var/lib/mysql
+    - ${STORAGE_VOLUME/wp8/mysql:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
@@ -269,7 +269,7 @@ services:
       WORDPRESS_UPLOAD_SIZE: 64M
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME}/wp9/wp-content:/var/www/html/wp-content
+    - ${STORAGE_VOLUME}/wp9/wp-content:/var/www/html/wp-content
     tty: true
     labels:
       traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}9.${DOMAIN}
@@ -283,7 +283,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME/wp9/mysql:/var/lib/mysql
+    - ${STORAGE_VOLUME/wp9/mysql:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
@@ -301,7 +301,7 @@ services:
       WORDPRESS_UPLOAD_SIZE: 64M
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME}/wp10/wp-content:/var/www/html/wp-content
+    - ${STORAGE_VOLUME}/wp10/wp-content:/var/www/html/wp-content
     tty: true
     labels:
       traefik.frontend.rule: Host:${SUBDOMAIN_PREFIX}10.${DOMAIN}
@@ -315,7 +315,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     stdin_open: true
     volumes:
-    - /${STORAGE_VOLUME/wp10/mysql:/var/lib/mysql
+    - ${STORAGE_VOLUME/wp10/mysql:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
