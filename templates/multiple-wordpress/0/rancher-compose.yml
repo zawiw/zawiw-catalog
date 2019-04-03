@@ -29,7 +29,7 @@
     - variable: SUBDOMAIN_PREFIX
       label: Subdomain prefix for all WordPress instances
       description: |
-        Enter a subdomain prefix to build an URL like <prefix><number>.<domain>
+        Enter a subdomain prefix to build an URL like prefixnumber.domain
       required: true
       type: string
       default: wp
